@@ -5,7 +5,8 @@ const {
   getUserById,
   getUser,
   updateUser,
-  userPurchaseList
+  userPurchaseList,
+  getUsers
 } = require("../controllers/user");
 const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/auth");
 
@@ -19,6 +20,14 @@ router.get(
   isSignedIn,
   isAuthenticated,
   userPurchaseList
+);
+
+router.get(
+  "/users",
+  isSignedIn,
+  isAuthenticated,
+  isAdmin,
+  getUsers
 );
 
 module.exports = router;

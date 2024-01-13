@@ -15,7 +15,7 @@ const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
 // const paymentBRoutes = require("./routes/paymentBRoutes");
 
-//DB Connection
+// DB Connection
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
@@ -26,7 +26,7 @@ mongoose
     console.log("DB CONNECTED");
   });
 
-//Middlewares
+// Middlewares
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
